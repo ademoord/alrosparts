@@ -1,0 +1,35 @@
+<!--  
+ 
+    file: footer.html
+    author: andromeda
+    desc: footer bar handler to be included in header
+
+-->
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">ALROSParts</h5>
+        <p class="grey-text text-lighten-4">"I taught myself to tune in to another person's wavelength, figure out what they were looking for, and try to project that thing back at them"
+        - Wolfman Jack</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Back to</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+		      {% if user.is_authenticated %}
+            <li><a class="grey-text text-lighten-3" href="/logout/">Logout</a></li>
+            {% else %}
+            <li><a class="grey-text text-lighten-3" href="/register/">Register</a></li>
+		      {% endif %}          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © PT. ALROS TEKNOLOGI INDONESIA 2020 
+    <a class="grey-text text-lighten-4 right" href="/">ALROSParts</a>
+    </div>
+  </div>
+</footer>

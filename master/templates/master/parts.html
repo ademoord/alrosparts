@@ -1,0 +1,42 @@
+<!--  
+ 
+    file: parts.html
+	author: andromeda
+    desc: HTML template to display all tbComponent entries
+
+ -->
+{% extends 'master/header.html' %}
+
+{% block content %}
+
+	<h6 align="center"><font color="#ffffff">tbComponent @ mariadb:mysql://alrosteknologi.ddns.net:3306/dbAlrosParts</font></h6>
+
+	<table>
+	<thead>
+	  <tr>
+	      <th bgcolor="#dfff9b"><font color="#000000">ID</th>
+	      <th bgcolor="#dfff9b"><font color="#000000">Name</th>
+	      <th bgcolor="#dfff9b"><font color="#000000">Total</th>
+	      <th bgcolor="#dfff9b"><font color="#000000">Description</th>
+	      <th bgcolor="#dfff9b"><font color="#000000">Package</th>
+	      <th bgcolor="#dfff9b"><font color="#000000">Distributor</th>
+	      <th bgcolor="#dfff9b"><font color="#000000">Part Number</th>
+	  </tr>
+	</thead>
+
+	<tbody>
+	  {% for part in parts %}
+	  <tr>
+	    <td bgcolor="#adffe1"><font color="#000000">{{part.id}}</td>
+	    <td bgcolor="#adffe1"><font color="#000000">{{part.compName}}</td>
+	    <td bgcolor="#adffe1"><font color="#000000">{{part.compTotal}}</td>
+	    <td bgcolor="#adffe1"><font color="#000000">{{part.compDesc}}</td>
+	    <td bgcolor="#adffe1"><font color="#000000">{{part.compPackage}}</td>
+	    <td bgcolor="#adffe1"><font color="#000000">{{part.compDist}}</td>
+	    <td bgcolor="#adffe1"><font color="#000000">{{part.compPartNum}}</td>
+	  </tr>
+	  {% endfor %}
+	</tbody>
+	</table>
+            
+{% endblock %}

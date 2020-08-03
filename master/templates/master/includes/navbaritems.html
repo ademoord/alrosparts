@@ -1,0 +1,20 @@
+<!--  
+ 
+    file: navbaritems.html
+    author: andromeda
+    desc: navigation bar handler to be included in header template
+
+ -->
+{% if user.is_authenticated %}
+    <li><a href="/">Home</a></li>
+    {% if user.username == "alrosAdmin" %}
+        <li><a href="/parts/">Parts</a></li>
+        <li><a href="/account/">Administrator Info</a></li>
+        <li><a href="/admin/">Administrator Page</a></li>
+        <li><a href="/logout/">Logout</a></li>
+    {% else %}
+        <li><a href="/parts/">Parts</a></li>
+        <li><a href="/account/">{{user.first_name}} {{user.last_name}}</a></li>
+        <li><a href="/logout/">Logout</a></li>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,50 @@
+<!--  
+ 
+    file: header.html
+	author: andromeda
+    desc: Base HTML template to handle navbar, body and messaging
+
+ -->
+<title>ALROSParts - {{title}}</title>
+<head>
+	{% load static %}
+	<!-- Prism CSS -->
+	<link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link href="{% static 'master/css/materialize.css' %}" rel="stylesheet">
+	<!-- Compiled and minified JavaScript for Materialize CSS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<style>
+	body {
+	  background-image: url('static/master/images/img0002.jpg');
+	  background-size: cover;
+	}
+</style> 
+
+<body>
+     
+	<nav>
+		<div class="nav-wrapper">
+			<a href="/" style="font-family: 'Product Sans'; font-weight: bold; " class="brand-logo">ALROSParts</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+
+		        {% include 'master/includes/navbaritems.html' %}
+
+         	</ul>
+		</div>
+	</nav>
+
+	{% include 'master/includes/messaging.html' %}
+	
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+
+{% include 'master/includes/footer.html' %}
+
+<!-- Prism JS -->
+<script src="{% static 'tinymce/js/prism.js' %}"></script>
